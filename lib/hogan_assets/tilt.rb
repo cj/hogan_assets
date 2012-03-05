@@ -8,8 +8,8 @@ module HoganAssets
       compiled_template = Hogan.compile(data)
       template_name = scope.logical_path.inspect
       <<-TEMPLATE
-        this.HoganTemplates || (this.HoganTemplates = {});
-        this.HoganTemplates[#{template_name}] = new Hogan.Template(#{compiled_template});
+        this.JST || (this.JST = {});
+        this.JST[#{template_name}] = new Hogan.Template(#{compiled_template});
       TEMPLATE
     end
 
